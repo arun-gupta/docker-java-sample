@@ -19,7 +19,7 @@
         <pluginRepository>
             <id>mesosphere-repo</id>
             <name>Mesosphere Repo</name>
-            <url>http://downloads.mesosphere.io/maven</url>
+            <url>https://downloads.mesosphere.io/maven</url>
         </pluginRepository>
     </pluginRepositories>
     <build>
