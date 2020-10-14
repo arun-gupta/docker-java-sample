@@ -52,21 +52,10 @@ node
     {
         stage('Unit testing')
         {
-           steps {
-		script {
-		def logContent = Jenkins.getInstance()
-		.getItemByFullName(env.JOB_NAME)
-		.getBuildByNumber(
-		Integer.parseInt(env.BUILD_NUMBER))
-		.logFile.text
-		// copy the log in the job's own workspace
-		writeFile file: "buildlog.txt", text: logContent
-		echo 'env.JOB_NAME'
-		}
-		}
+           
 	    bat 'mvn test'
 	    
-	   
+	    ${env.BUILD_NUMBER}
    	    bat '''curl -g --header "zsessionid":"_7cIVFUMTAe5YRxqNYHuc7obb0aBlXM1WYurWU8" -H "Content-Type":"application/json" -d"{\\"Defect\\":{\\"Name\\":\\"Automated Defect: US2020\\",\\"Severity\\": \\"Cosmetic\\", \\"Priority\\": \\"Resolve Immediately\\", \\"State\\": \\"Open\\"}}" https://rally1.rallydev.com/slm/webservice/v2.0/Defect/create'''
 		
 	    
