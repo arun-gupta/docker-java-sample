@@ -57,7 +57,7 @@ node
 	   
 		bat 'mvn test'
 		jobStatus = getJobStatus(UNIT_TESTING)
-		if(jobStatus == "FAILURE"){
+		if(jobStatus == "FAILURE")
 		{
 			echo 'FAIL'
 		
