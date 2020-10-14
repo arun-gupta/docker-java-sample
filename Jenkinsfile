@@ -52,7 +52,7 @@ node
     {
         stage('Unit testing')
         {
-            bat 'mvn test'
+            bat 'mvn test';
 	    
    	    curl --header "zsessionid:_7cIVFUMTAe5YRxqNYHuc7obb0aBlXM1WYurWU8" -H "Content-Type:application/json" -d"{\"Defect\":{\"Name\":\"Automated Defect: US220\",\"Severity\": \"Cosmetic\", \"Priority\": \"Resolve Immediately\", \"State\": \"Open\"}}" https://rally1.rallydev.com/slm/webservice/v2.0/Defect/create
 	   
