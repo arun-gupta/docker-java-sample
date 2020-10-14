@@ -54,10 +54,10 @@ node
         {
            
 	    
-	   
+	        sleep 15
 		bat 'mvn test'
 		jobStatus = getJobStatus(UNIT_TESTING)
-		sleep 15
+		
 		if(jobStatus == "FAILURE")
 		{
 			echo 'FAIL'
