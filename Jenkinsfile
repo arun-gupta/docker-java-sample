@@ -54,19 +54,20 @@ node
         {
            
 	    
-	    try {
-		// do something that fails
-		sh "exit 1"
+	   
 		bat 'mvn test'
-		currentBuild.result = 'SUCCESS'
-	    } catch (Exception err) {
-		currentBuild.result = 'FAILURE'
-	    }
-	    echo "RESULT: ${currentBuild.result}"
-	    
-	    
-   	    bat '''curl -g --header "zsessionid":"_7cIVFUMTAe5YRxqNYHuc7obb0aBlXM1WYurWU8" -H "Content-Type":"application/json" -d"{\\"Defect\\":{\\"Name\\":\\"Automated Defect: US2020\\",\\"Severity\\": \\"Cosmetic\\", \\"Priority\\": \\"Resolve Immediately\\", \\"State\\": \\"Open\\"}}" https://rally1.rallydev.com/slm/webservice/v2.0/Defect/create'''
+		if (currentBuild.result == 'SUCCESS')
+		{
+			break
+		}
+		else
+			bat '''curl -g --header "zsessionid":"_7cIVFUMTAe5YRxqNYHuc7obb0aBlXM1WYurWU8" -H "Content-Type":"application/json" -d"{\\"Defect\\":{\\"Name\\":\\"Automated Defect: US2020\\",\\"Severity\\": \\"Cosmetic\\", \\"Priority\\": \\"Resolve Immediately\\", \\"State\\": \\"Open\\"}}" https://rally1.rallydev.com/slm/webservice/v2.0/Defect/create'''
 		
+		
+	   
+	    
+	    
+   	    
 	    
         }
     }
