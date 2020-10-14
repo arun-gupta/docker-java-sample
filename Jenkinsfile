@@ -56,12 +56,11 @@ node
 	    
 	   
 		bat 'mvn test'
-		if (currentBuild.result == 'SUCCESS')
+		jobStatus = getJobStatus(UNIT_TESTING)
+		if(jobStatus == "FAILURE"){
 		{
-			echo 'SUCESS'
-		}
-		else if (currentBuild.result == 'FAILURE'){
-			echo 'FAIL TO DIE'
+			echo 'FAIL'
+		
 			bat '''curl -g --header "zsessionid":"_7cIVFUMTAe5YRxqNYHuc7obb0aBlXM1WYurWU8" -H "Content-Type":"application/json" -d"{\\"Defect\\":{\\"Name\\":\\"Automated Defect: US2020\\",\\"Severity\\": \\"Cosmetic\\", \\"Priority\\": \\"Resolve Immediately\\", \\"State\\": \\"Open\\"}}" https://rally1.rallydev.com/slm/webservice/v2.0/Defect/create'''
 		
 		}
