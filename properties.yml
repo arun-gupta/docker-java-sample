@@ -1,7 +1,7 @@
 APP_NAME: 'tryout'
 MS_NAME: 'platform-api'
 BRANCH: 'master'
-GIT_SOURCE_URL: 'https://github.com/Umang2608/SpringBoot-vue.git'
+GIT_SOURCE_URL: 'https://github.com/Umang2608/docker-java-sample.git'
 SONAR_HOST_URL: 'http://sonarqube2-tryout.apps.na311.openshift.opentlc.com/'
 CODE_QUALITY: 'True'
 UNIT_TESTING: 'True'
