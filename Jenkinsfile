@@ -59,7 +59,7 @@ node
 	}
 	post 
 	    {
-		  unsuccessful{
+		  failure{
 		
 		
 			echo 'FAIL'
