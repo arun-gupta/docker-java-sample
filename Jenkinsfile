@@ -57,7 +57,9 @@ node
 	        
 		bat 'mvn test'
 	}
-	post 
+	
+    }
+    post 
 	    {
 		  failure{
 		
@@ -72,8 +74,7 @@ node
 	    
    	    
 	    
-        }
-    }
+     }
     if (env.CODE_QUALITY == 'True')
     {
         stage('Code Quality')
